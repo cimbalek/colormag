@@ -174,6 +174,7 @@ if ( ! function_exists( 'colormag_below_header_bar_display' ) ) :
 		?>
 
 		<nav id="site-navigation" class="main-navigation clearfix" role="navigation">
+			<?php if (function_exists ('seznamPartnerAdHeader')) { seznamPartnerAdHeader(); } ?>
 			<div class="inner-wrap clearfix">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" style="padding: 0px 0px;"><img class="menu-logo" src="https://vedator.org/wp-content/uploads/2017/11/logo.png" height="40px" width="166px" /></a>
 				<?php

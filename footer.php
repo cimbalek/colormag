@@ -33,6 +33,8 @@ if ( $main_total_footer_option_layout_class == 'type_two' ) {
 }
 ?>
 
+<?php if (function_exists ('seznamPartnerAdFooter')) { seznamPartnerAdFooter(); } ?>
+
 <footer id="colophon" class="clearfix <?php echo esc_attr( $class_name ); ?>">
 	<?php get_sidebar( 'footer' ); ?>
 	<div class="footer-socket-wrapper clearfix">

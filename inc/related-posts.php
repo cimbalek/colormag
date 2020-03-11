@@ -49,3 +49,5 @@
 <?php endif; ?>
 
 <?php wp_reset_query(); ?>
+
+<?php if (function_exists ('seznamPartnerAdBottom')) { seznamPartnerAdBottom(); } ?>
