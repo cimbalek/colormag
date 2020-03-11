@@ -13,6 +13,7 @@
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="google-site-verification" content="8nCyH6glLAcJi2HDzOH92vw0MjA9rdCgzeu-9K4ZhOU" />
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		<?php
@@ -42,7 +43,6 @@
 
 			<header id="masthead" class="site-header clearfix <?php echo esc_attr( $class_name ); ?>">
 				<div id="header-text-nav-container" class="clearfix">
-
 					<?php colormag_top_header_bar_display(); // Display the top header bar ?>
 
 					<?php
@@ -60,7 +60,6 @@
 					?>
 
 					<?php colormag_below_header_bar_display(); // Display the below header bar  ?>
-
 				</div><!-- #header-text-nav-container -->
 
 				<?php

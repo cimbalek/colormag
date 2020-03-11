@@ -117,7 +117,7 @@ if ( ! function_exists( 'colormag_top_header_bar_display' ) ) :
 	 * @since ColorMag 1.2.2
 	 */
 	function colormag_top_header_bar_display() {
-		if ( get_theme_mod( 'colormag_breaking_news', 0 ) == 1 || get_theme_mod( 'colormag_date_display', 0 ) == 1 || get_theme_mod( 'colormag_social_link_activate', 0 ) == 1 ) :
+		if ( get_theme_mod( 'colormag_breaking_news', 0 ) == 1 || get_theme_mod( 'colormag_date_display', 0 ) == 1 ) :
 			?>
 			<div class="news-bar">
 				<div class="inner-wrap clearfix">
@@ -156,65 +156,6 @@ if ( ! function_exists( 'colormag_middle_header_bar_display' ) ) :
 
 		<div class="inner-wrap">
 
-			<div id="header-text-nav-wrap" class="clearfix">
-				<div id="header-left-section">
-					<?php
-					if ( (get_theme_mod( 'colormag_header_logo_placement', 'header_text_only' ) == 'show_both' || get_theme_mod( 'colormag_header_logo_placement', 'header_text_only' ) == 'header_logo_only' ) ) {
-						?>
-						<div id="header-logo-image">
-							<?php if ( get_theme_mod( 'colormag_logo', '' ) != '' ) { ?>
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url( get_theme_mod( 'colormag_logo' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
-							<?php } ?>
-
-							<?php
-							if ( function_exists( 'the_custom_logo' ) && has_custom_logo( $blog_id = 0 ) ) {
-								colormag_the_custom_logo();
-							}
-							?>
-						</div><!-- #header-logo-image -->
-						<?php
-					}
-					$screen_reader = '';
-					if ( get_theme_mod( 'colormag_header_logo_placement', 'header_text_only' ) == 'header_logo_only' || (get_theme_mod( 'colormag_header_logo_placement', 'header_text_only' ) == 'disable' ) ) {
-						$screen_reader = 'screen-reader-text';
-					}
-					?>
-					<div id="header-text" class="<?php echo $screen_reader; ?>">
-						<?php if ( is_front_page() || is_home() ) : ?>
-							<h1 id="site-title">
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-							</h1>
-						<?php else : ?>
-							<h3 id="site-title">
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-							</h3>
-						<?php endif; ?>
-						<?php
-						$description = get_bloginfo( 'description', 'display' );
-						if ( $description || is_customize_preview() ) :
-							?>
-							<p id="site-description"><?php echo $description; ?></p>
-						<?php endif; ?><!-- #site-description -->
-					</div><!-- #header-text -->
-				</div><!-- #header-left-section -->
-				<div id="header-right-section">
-					<?php
-					if ( is_active_sidebar( 'colormag_header_sidebar' ) ) {
-						?>
-						<div id="header-right-sidebar" class="clearfix">
-							<?php
-							// Calling the header sidebar if it exists.
-							if ( ! dynamic_sidebar( 'colormag_header_sidebar' ) ):
-							endif;
-							?>
-						</div>
-						<?php
-					}
-					?>
-				</div><!-- #header-right-section -->
-
-			</div><!-- #header-text-nav-wrap -->
-
 		</div><!-- .inner-wrap -->
 
 		<?php
@@ -234,6 +175,7 @@ if ( ! function_exists( 'colormag_below_header_bar_display' ) ) :
 
 		<nav id="site-navigation" class="main-navigation clearfix" role="navigation">
 			<div class="inner-wrap clearfix">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" style="padding: 0px 0px;"><img class="menu-logo" src="https://vedator.org/wp-content/uploads/2017/11/logo.png" height="40px" width="166px" /></a>
 				<?php
 				if ( get_theme_mod( 'colormag_home_icon_display', 0 ) == 1 ) {
 					if ( is_front_page() ) {
@@ -242,7 +184,7 @@ if ( ! function_exists( 'colormag_below_header_bar_display' ) ) :
 						$home_icon_class = 'home-icon';
 					}
 					?>
-
+				
 					<div class="<?php echo $home_icon_class; ?>">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><i class="fa fa-home"></i></a>
 					</div>

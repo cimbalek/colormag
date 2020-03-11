@@ -494,6 +494,7 @@ endif;
 
 /**************************************************************************************/
 
+
 /*
  * Category Color Options
  */
@@ -510,6 +511,9 @@ function colormag_category_color( $wp_category_id ) {
    }
 }
 endif;
+  
+$array = array(12, 0, 0, 18, 27, 0, 46); 
+print_r(array_filter($array, "Even")); 
 
 /**************************************************************************************/
 
@@ -647,6 +651,21 @@ if ( ! function_exists( 'colormag_related_posts_function' ) ) {
 /**************************************************************************************/
 
 /*
+ * Filter out categories used just for organizing posts on main page /Eg. in slider/ 
+ */
+function filterOutCategories($var)
+{
+   if(strcasecmp("slider", $var->cat_name) == 0) {
+	   return FALSE;
+   } 
+   if(strcasecmp("zvyraznene", $var->cat_name) == 0) {
+	   return FALSE;
+   } else {
+	   return TRUE;
+   }
+}
+
+/*
  * Category Color for widgets and other
  */
 if ( !function_exists('colormag_colored_category') ) :
@@ -655,9 +674,10 @@ if ( !function_exists('colormag_colored_category') ) :
       $categories = get_the_category();
       $separator = '&nbsp;';
       $output = '';
-      if($categories) {
+	  $filteredCategories = array_filter($categories, "filterOutCategories");
+      if($filteredCategories) {
          $output .= '<div class="above-entry-meta"><span class="cat-links">';
-         foreach($categories as $category) {
+         foreach($filteredCategories as $category) {
             $color_code = colormag_category_color(get_cat_id($category->cat_name));
             if (!empty($color_code)) {
                $output .= '<a href="'.get_category_link( $category->term_id ).'" style="background:' . colormag_category_color(get_cat_id($category->cat_name)) . '" rel="category tag">'.$category->cat_name.'</a>'.$separator;

@@ -136,7 +136,7 @@ h1, h2, h3, h4, h5, h6 {
 	padding-bottom: 18px;
 	color: #333333;
 	font-weight: normal;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Arial black', 'Open Sans', sans-serif;
 }
 
 h1 {
@@ -535,7 +535,7 @@ img#wpstats {
 /* =BODY
 ----------------------------------------------- */
 body {
-	padding-top: 10px;
+	padding-top: 0px;
 	padding-bottom: 10px;
 	background-size: cover;
 }
@@ -651,6 +651,13 @@ body {
 .fa {
 	font-size: 22px;
 	color: #CCCCCC;
+}
+
+.menu-logo {
+	float: left;
+	margin-right: 1%;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
 }
 
 .social-links {
@@ -846,6 +853,7 @@ nav li > ol {
 	position: relative;
 	background-color: #232323;
 	border-top: 4px solid #289dcc;
+	position: relative;
 }
 
 #site-navigation .inner-wrap {
@@ -898,6 +906,7 @@ nav li > ol {
 .main-navigation li.default-menu,
 li.default-menu {
 	display: none;
+	margin-left: 150px;
 }
 
 .main-navigation a:hover,
@@ -924,7 +933,7 @@ li.default-menu {
 .main-navigation li li.menu-item-has-children > a:after,
 .main-navigation li.page_item_has_children > a:after,
 .main-navigation li li.page_item_has_children > a:after {
-	font-family: FontAwesome;
+	font-family: OpenSans;
 	font-style: normal;
 	font-weight: normal;
 	text-decoration: inherit;
@@ -935,12 +944,14 @@ li.default-menu {
 
 .main-navigation li.menu-item-has-children > a:after,
 .main-navigation li.page_item_has_children > a:after {
+	font-family: FontAwesome;
 	content: "\f107";
 	color: #ffffff;
 }
 
 .main-navigation li li.menu-item-has-children > a:after,
 .main-navigation li li.page_item_has_children > a:after {
+	font-family: FontAwesome;
 	content: "\f105";
 	position: absolute;
 	right: 8px;
@@ -2261,16 +2272,16 @@ a#scroll-up:hover {
 }
 
 .widget_featured_slider .slide-content {
-	position: absolute;
 	bottom: 0;
-	background: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.3));
-	background: -o-linear-gradient(bottom, transparent, rgba(0, 0, 0, 0.3));
-	background: -moz-linear-gradient(bottom, transparent, rgba(0, 0, 0, 0.3));
-	background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3));
+	background: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 1));
+	background: -o-linear-gradient(bottom, transparent, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 1));
+	background: -moz-linear-gradient(bottom, transparent, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 1));
+	background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 1));
 	padding-bottom: 20px;
 	padding-left: 5%;
 	position: absolute;
 	width: 95%;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .widget_featured_slider .slide-content .above-entry-meta .cat-links a {
@@ -2288,7 +2299,6 @@ a#scroll-up:hover {
 
 .widget_featured_slider .slide-content .entry-title a {
 	color: #ffffff;
-	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .widget_featured_slider .slide-content .entry-title a:hover {
@@ -2347,14 +2357,15 @@ a#scroll-up:hover {
 .widget_highlighted_posts .article-content {
 	position: absolute;
 	bottom: 0;
-	background: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.8));
-	background: -o-linear-gradient(bottom, transparent, rgba(0, 0, 0, 0.8));
-	background: -moz-linear-gradient(bottom, transparent, rgba(0, 0, 0, 0.8));
-	background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
+	background: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 1));
+	background: -o-linear-gradient(bottom, transparent, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 1));
+	background: -moz-linear-gradient(bottom, transparent, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 1));
+	background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 1));
 	padding-bottom: 10px;
 	padding-left: 5%;
 	position: absolute;
 	width: 95%;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .widget_highlighted_posts .above-entry-meta {
@@ -2376,7 +2387,6 @@ a#scroll-up:hover {
 
 .widget_highlighted_posts .article-content .entry-title a {
 	color: #ffffff;
-	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .widget_highlighted_posts .article-content .entry-title a:hover {
