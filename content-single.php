@@ -1,6 +1,6 @@
 <?php
 /**
- * The template used for displaying single post content in single.php
+ * The template used for displaying page content in page.php
  *
  * @package ThemeGrill
  * @subpackage ColorMag
@@ -16,10 +16,24 @@
       $image_popup_url = wp_get_attachment_url( $image_popup_id );
    ?>
 
-   <?php if ( ( get_theme_mod( 'colormag_featured_image_show', 0 ) == 0 ) && ( has_post_thumbnail() ) ) { ?>
+   <?php if ( has_post_thumbnail() ) { ?>
       <div class="featured-image">
-      <?php if (get_theme_mod('colormag_featured_image_popup', 0) == 1) { ?>
-         <a href="<?php echo $image_popup_url; ?>" class="image-popup"><?php the_post_thumbnail( 'colormag-featured-image' ); ?></a>
+			<?php if (get_theme_mod('colormag_featured_image_popup', 0) == 1) { ?>
+				<?php
+					$figcaption = wp_get_attachment_caption($image_popup_id);
+					if ($figcaption) {
+				?>
+					<figure>
+						<a href="<?php echo $image_popup_url; ?>" class="image-popup">
+							<picture class="u-photo">
+								<?php the_post_thumbnail( 'colormag-featured-image' ); ?>
+							</picture>
+						</a>
+						<figcaption><?php echo $figcaption; ?></figcaption>
+					</figure>
+				<?php } else { ?>
+					<a href="<?php echo $image_popup_url; ?>" class="image-popup"><?php the_post_thumbnail( 'colormag-featured-image' ); ?></a>
+				<?php } ?>
       <?php } else { ?>
          <?php the_post_thumbnail( 'colormag-featured-image' ); ?>
       <?php } ?>
@@ -51,7 +65,7 @@
    				'link_after'        => '</span>'
    	      ) );
    		?>
-   	</div>
+		 </div>
 
    </div>
 
