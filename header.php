@@ -4,91 +4,74 @@
  *
  * Displays all of the <head> section and everything up till <div id="main" class="clearfix"> <div class="inner-wrap">
  *
- * @package    ThemeGrill
+ * @package ThemeGrill
  * @subpackage ColorMag
- * @since      ColorMag 1.0
+ * @since ColorMag 1.0
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="http://gmpg.org/xfn/11"/>
-	<?php
-	/**
-	 * This hook is important for wordpress plugins and other many things
-	 */
-	wp_head();
-	?>
-</head>
-
-<body <?php body_class(); ?>>
-
-<?php
-/**
- * WordPress function to load custom scripts after body.
- *
- * Introduced in WordPress 5.2.0
- *
- * @since ColorMag 1.4.0
- */
-if ( function_exists( 'wp_body_open' ) ) {
-	wp_body_open();
-}
-?>
-
-<?php do_action( 'colormag_before' ); ?>
-
-<div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'colormag' ); ?></a>
-
-	<?php do_action( 'colormag_before_header' ); ?>
-
-	<?php
-	// Add the main total header area display type dynamic class.
-	$main_total_header_option_layout_class = get_theme_mod( 'colormag_main_total_header_area_display_type', 'type_one' );
-
-	$class_name = '';
-	if ( $main_total_header_option_layout_class == 'type_two' ) {
-		$class_name = 'colormag-header-clean';
-	} else if ( $main_total_header_option_layout_class == 'type_three' ) {
-		$class_name = 'colormag-header-classic';
-	}
-	?>
-
-	<header id="masthead" class="site-header clearfix <?php echo esc_attr( $class_name ); ?>">
-		<div id="header-text-nav-container" class="clearfix">
-
-			<?php colormag_top_header_bar_display(); // Display the top header bar ?>
-
-			<?php
-			if ( get_theme_mod( 'colormag_header_image_position', 'position_two' ) == 'position_one' ) {
-				colormag_render_header_image();
-			}
-			?>
-
-			<?php colormag_middle_header_bar_display(); // Display the middle header bar ?>
-
-			<?php
-			if ( get_theme_mod( 'colormag_header_image_position', 'position_two' ) == 'position_two' ) {
-				colormag_render_header_image();
-			}
-			?>
-
-			<?php colormag_below_header_bar_display(); // Display the below header bar  ?>
-
-		</div><!-- #header-text-nav-container -->
-
+	<head>
+		<meta charset="<?php bloginfo( 'charset' ); ?>">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="google-site-verification" content="8nCyH6glLAcJi2HDzOH92vw0MjA9rdCgzeu-9K4ZhOU">
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<script src="/js/policy.js?v1" crossorigin="anonymous" integrity="sha256-Y5gR4DJMcicqD6R+pQJYxXoPt3vi5Ci1lLMxPl4XxAM="></script>
+		<script src="https://ssp.imedia.cz/static/js/ssp.js?v1" defer id="ssp-script" crossorigin="anonymous"></script>
+		<link rel="manifest" href="/manifest.webmanifest?v1" crossorigin="anonymous">
 		<?php
-		if ( get_theme_mod( 'colormag_header_image_position', 'position_two' ) == 'position_three' ) {
-			colormag_render_header_image();
-		}
+		/**
+		 * This hook is important for wordpress plugins and other many things
+		 */
+		wp_head();
 		?>
+	</head>
 
-	</header>
+	<body <?php body_class(); ?>>
+		<?php do_action( 'colormag_before' ); ?>
+		<div id="page" class="hfeed site">
+			<?php do_action( 'colormag_before_header' ); ?>
 
-	<?php do_action( 'colormag_after_header' ); ?>
-	<?php do_action( 'colormag_before_main' ); ?>
+			<?php
+			// Add the main total header area display type dynamic class
+			$main_total_header_option_layout_class = get_theme_mod( 'colormag_main_total_header_area_display_type', 'type_one' );
 
-	<div id="main" class="clearfix">
-		<div class="inner-wrap clearfix">
+			$class_name = '';
+			if ( $main_total_header_option_layout_class == 'type_two' ) {
+				$class_name = 'colormag-header-clean';
+			} elseif ( $main_total_header_option_layout_class == 'type_three' ) {
+				$class_name = 'colormag-header-classic';
+			}
+			?>
+
+			<header id="masthead" class="site-header clearfix <?php echo esc_attr( $class_name ); ?>">
+				<div id="header-text-nav-container" class="clearfix">
+					<?php colormag_top_header_bar_display(); // Display the top header bar ?>
+
+					<?php
+					if ( get_theme_mod( 'colormag_header_image_position', 'position_two' ) == 'position_one' ) {
+						colormag_render_header_image();
+					}
+					?>
+
+					<?php colormag_middle_header_bar_display(); // Display the middle header bar ?>
+
+					<?php
+					if ( get_theme_mod( 'colormag_header_image_position', 'position_two' ) == 'position_two' ) {
+						colormag_render_header_image();
+					}
+					?>
+
+					<?php colormag_below_header_bar_display(); // Display the below header bar  ?>
+				</div><!-- #header-text-nav-container -->
+
+				<?php
+				if ( get_theme_mod( 'colormag_header_image_position', 'position_two' ) == 'position_three' ) {
+					colormag_render_header_image();
+				}
+				?>
+
+			</header>
+			<?php do_action( 'colormag_after_header' ); ?>
+			<?php do_action( 'colormag_before_main' ); ?>
+			<div id="main" class="clearfix">
+				<div class="inner-wrap clearfix">
