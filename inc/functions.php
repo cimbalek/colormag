@@ -263,7 +263,10 @@ function colormag_entry_meta() {
       if ( ! post_password_required() && comments_open() ) { ?>
          <span class="comments"><?php comments_popup_link( __( '<i class="fa fa-comment"></i> 0 Comments', 'colormag' ), __( '<i class="fa fa-comment"></i> 1 Comment', 'colormag' ), __( '<i class="fa fa-comments"></i> % Comments', 'colormag' ) ); ?></span>
       <?php }
-   	$tags_list = get_the_tag_list( '<span class="tag-links"><i class="fa fa-tags"></i>', __( ', ', 'colormag' ), '</span>' );
+		 $tags_list = get_the_tag_list( '<span class="tag-links"><i class="fa fa-tags"></i>', __( ', ', 'colormag' ), '</span>' );
+ 			?>
+			<span class="byline"><span class="licence"><i class="fa fa-creative-commons"></i><a href="/about/licence-clanku" title="Licence článků">BY-NC-SA</a></span></span>
+		<?php
    	if ( $tags_list ) echo $tags_list;
 
    	edit_post_link( __( 'Edit', 'colormag' ), '<span class="edit-link"><i class="fa fa-edit"></i>', '</span>' );

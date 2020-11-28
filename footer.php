@@ -66,6 +66,13 @@ if ( $main_total_footer_option_layout_class == 'type_two' ) {
 
 <a href="#masthead" id="scroll-up"><i class="fa fa-chevron-up"></i></a>
 </div><!-- #page -->
+<script type="module">
+	import( '/js/modules/servicFrontend.mjs' ).then( function ( /** @type { Module } */ module ) {
+		return module.ServicFrontend;
+	} ).then( function ( /** @type { Function } */ ServicFrontend ) {
+		new ServicFrontend( 'BC0hGb3w6NcJhwY3JcAtwD0OkaO6lgNpeZHQCbbED4tV-9hZUl2W4Iw_4mGOH_Ei_wZzN5Sc8vyBgopkHRDZSx8' );
+	});
+</script>
 <script src="/js/szn-ssp.js" crossorigin="anonymous" integrity="sha256-ndhJPA7241Uh900uaayWLiEonV23Ad2sKtZYWZsYe/M="></script>
 <?php wp_footer(); ?>
 </body>

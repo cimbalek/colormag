@@ -15,7 +15,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="google-site-verification" content="8nCyH6glLAcJi2HDzOH92vw0MjA9rdCgzeu-9K4ZhOU">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
-		<script src="https://ssp.imedia.cz/static/js/ssp.js?v=1" defer id="ssp-script" crossorigin="anonymous"></script>
+		<script src="/js/policy.js?v1" crossorigin="anonymous" integrity="sha256-Y5gR4DJMcicqD6R+pQJYxXoPt3vi5Ci1lLMxPl4XxAM="></script>
+		<script src="https://ssp.imedia.cz/static/js/ssp.js?v1" defer id="ssp-script" crossorigin="anonymous"></script>
+		<link rel="manifest" href="/manifest.webmanifest?v1" crossorigin="anonymous">
 		<?php
 		/**
 		 * This hook is important for wordpress plugins and other many things
